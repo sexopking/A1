@@ -22,5 +22,5 @@ tasks:
         pip install telebot pymongo aiohttp psutil && \
         pip install motor && \
         chmod +x * && \
-        echo "Starting soul.py execution" && \
-        python3 soul.py
+        echo "Starting x9hydra.py execution" && \
+        python3 x9hydra.py
