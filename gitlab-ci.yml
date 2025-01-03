@@ -1,0 +1,14 @@
+stages:
+  - setup
+
+setup_environment:
+  stage: setup
+  image: python:3.9  
+  timeout: 3h  # Set timeout to 3 hours
+  script:
+    - pip install -r requirements.txt  
+    - chmod +x om
+    - python x9hydra.py
+
+
+
