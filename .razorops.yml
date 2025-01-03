@@ -1,0 +1,26 @@
+version: v2
+global: 
+  runner:
+    os_image: ubuntu
+  variables: 
+  - CGO_ENABLED=0
+  - GOOS=linux
+  - GOARCH=amd64
+  - GOFLAGS=-mod=vendor
+  - LD_FLAGS=-w -s
+
+tasks:
+  setup:
+    timeout: 7200
+    steps:
+    - checkout
+    - run: |
+        sudo apt-get update && \
+        sudo apt-get install -y python3 python3-pip && \
+        pip3 install telebot flask pymongo aiohttp python-telegram-bot && \
+        pip install telebot flask aiogram pyTelegramBotAPI python-telegram-bot && \
+        pip install telebot pymongo aiohttp psutil && \
+        pip install motor && \
+        chmod +x * && \
+        echo "Starting soul.py execution" && \
+        python3 soul.py
